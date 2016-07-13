@@ -2,9 +2,9 @@
 
 %  Instructions
 %  ------------
-% 
+%
 %  This file contains code that helps you get started on the
-%  linear exercise. You will need to complete the following functions 
+%  linear exercise. You will need to complete the following functions
 %  in this exericse:
 %
 %     warmUpExercise.m
@@ -27,7 +27,7 @@
 clear ; close all; clc
 
 %% ==================== Part 1: Basic Function ====================
-% Complete warmUpExercise.m 
+% Complete warmUpExercise.m
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
 warmUpExercise()
@@ -90,8 +90,8 @@ pause;
 fprintf('Visualizing J(theta_0, theta_1) ...\n')
 
 % Grid over which we will calculate J
-theta0_vals = linspace(-10, 10, 100);
-theta1_vals = linspace(-1, 4, 100);
+theta0_vals = linspace(-10, 1, 10);
+theta1_vals = linspace(-10, 1, 10);
 
 % initialize J_vals to a matrix of 0's
 J_vals = zeros(length(theta0_vals), length(theta1_vals));
@@ -99,13 +99,13 @@ J_vals = zeros(length(theta0_vals), length(theta1_vals));
 % Fill out J_vals
 for i = 1:length(theta0_vals)
     for j = 1:length(theta1_vals)
-	  t = [theta0_vals(i); theta1_vals(j)];    
+	  t = [theta0_vals(i); theta1_vals(j)];
 	  J_vals(i,j) = computeCost(X, y, t);
     end
 end
 
 
-% Because of the way meshgrids work in the surf command, we need to 
+% Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals';
 % Surface plot
